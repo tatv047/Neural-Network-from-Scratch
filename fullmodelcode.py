@@ -439,10 +439,10 @@ class Optimiser_Adam:
         self.iterations += 1
  
 # Create dataset 
-X, y = spiral_data(samples=100, classes=3) 
+X, y = spiral_data(samples=1000, classes=3) 
  
 # Create Dense layer with 2 input features and 64 output values 
-dense1 = Layer_Dense(2, 64, weight_regularizer_l2=5e-4, 
+dense1 = Layer_Dense(2, 512, weight_regularizer_l2=5e-4, 
                             bias_regularizer_l2=5e-4)
  
 # Create ReLU activation (to be used with Dense layer): 
@@ -450,7 +450,7 @@ activation1 = Activation_ReLU()
  
 # Create second Dense layer with 64 input features (as we take output 
 # of previous layer here) and 3 output values (output values) 
-dense2 = Layer_Dense(64, 3) 
+dense2 = Layer_Dense(512, 3) 
  
 # Create Softmax classifier's combined loss and activation 
 loss_activation = Activation_Softmax_Loss_CategoricalCrossentropy() 
